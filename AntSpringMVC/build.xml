@@ -70,8 +70,8 @@
     		<classpath location="${jacoco.dir}/WEB-INF/lib/org.jacoco.ant-0.7.5.201505241946.jar"/>
 	</taskdef>
 
-	<!-- Run jUnit -->
-	#<target name="junit1" depends="compile">
+	<!-- Run jUnit 
+	<target name="junit1" depends="compile"> -->
 	<target name="junit1">	
 	<jacoco:coverage destfile="${target.dir}/jacoco.exec">
 		<!--<pathconvert property="classpathProp" refid="junit.class.path" />
