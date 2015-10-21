@@ -67,7 +67,7 @@
 	</target>
 	
 	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
-    		<classpath location="${jacoco.dir}/WEB-INF/lib/org.jacoco.ant-0.6.2.201302030002.jar"/>
+    		<classpath location="${jacoco.dir}/WEB-INF/lib/org.jacoco.ant-0.7.5.201505241946.jar"/>
 	</taskdef>
 
 	<!-- Run jUnit -->
