@@ -71,7 +71,7 @@
 	</taskdef>
 
 	<!-- Run jUnit -->
-	<target name="junit" depends="compile">
+	<target name="junit1" depends="compile">
 	<jacoco:coverage destfile="${target.dir}/jacoco.exec">
 		<!--<pathconvert property="classpathProp" refid="junit.class.path" />
 		<echo>Classpath is ${classpathProp}</echo>-->
