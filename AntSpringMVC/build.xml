@@ -1,4 +1,4 @@
-<project xmlns:ivy="antlib:org.apache.ivy.ant" name="HelloProject" default="main" basedir=".">
+<project xmlns:jacoco="antlib:org.jacoco.ant" name="HelloProject" default="main" basedir=".">
 	<description>
 		Create a Spring MVC (WAR) with Ant build script
 	</description>
@@ -9,7 +9,7 @@
 	<property name="src.dir" location="src" />
 	<property name="test.dir" location="src" />
 	<property name="report.dir" location="report" />
-
+	<property name="jacoco.dir" value="/var/lib/jenkins/plugins/jacoco"/>
 	<property name="resources.dir" location="resources" />
 	<property name="web.dir" value="war" />
 	<property name="web.classes.dir" location="${web.dir}/WEB-INF/classes" />
@@ -65,10 +65,14 @@
 			<zipfileset dir="${web.dir}/resources" prefix="resources" />
 		</war>
 	</target>
+	
+	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+    		<classpath location="${jacoco.dir}/WEB-INF/lib/org.jacoco.ant-0.6.2.201302030002.jar"/>
+	</taskdef>
 
 	<!-- Run jUnit -->
 	<target name="junit" depends="compile">
-
+	<jacoco:coverage destfile="${target.dir}/jacoco.exec">
 		<!--<pathconvert property="classpathProp" refid="junit.class.path" />
 		<echo>Classpath is ${classpathProp}</echo>-->
 
@@ -101,6 +105,7 @@
 			</test>
 			
 		</junit>
+		</jacoco:coverage>
 	</target>
 
 	<!-- Create folders -->
