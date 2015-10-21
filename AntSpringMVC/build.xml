@@ -77,7 +77,7 @@
 		<!--<pathconvert property="classpathProp" refid="junit.class.path" />
 		<echo>Classpath is ${classpathProp}</echo>-->
 
-		<junit printsummary="yes" haltonfailure="no">
+		<junit printsummary="yes" haltonfailure="yes" fork="on" forkmode="once">
 
 			<!--
 			<classpath location="lib/junit-4.11.jar" />
