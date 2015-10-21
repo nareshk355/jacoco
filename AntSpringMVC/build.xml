@@ -1,4 +1,4 @@
-<project xmlns:jacoco="antlib:org.jacoco.ant" name="HelloProject" default="main" basedir=".">
+<project xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:jacoco="antlib:org.jacoco.ant" name="HelloProject" default="main" basedir=".">
 	<description>
 		Create a Spring MVC (WAR) with Ant build script
 	</description>
